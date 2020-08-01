@@ -1,39 +1,46 @@
-<p align="center"><a href="https://github.com/CubeQuence/CubeQuence"><img src="https://rawcdn.githack.com/CubeQuence/CubeQuence/855a8fe836989ca40c4e50a889362975eab9ac43/public/assets/images/banner.png"></a></p>
-
-<p align="center">
-<a href="https://packagist.org/packages/cubequence/cubequence"><img src="https://poser.pugx.org/cubequence/cubequence/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/cubequence/cubequence"><img src="https://poser.pugx.org/cubequence/cubequence/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/cubequence/cubequence"><img src="https://poser.pugx.org/cubequence/cubequence/license.svg" alt="License"></a>
+<h1 align="center">Welcome to Sluijter Kappers Backend 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://choosealicense.com/no-permission/" target="_blank">
+    <img alt="License: UNLICENSED" src="https://img.shields.io/badge/License-UNLICENSED-yellow.svg" />
+  </a>
 </p>
 
-# CubeQuence
+> Je hebt kappers en kappers. SluijterKappers is al vele jaren een zeer eigentijdse kapper / kapsalon in Soest. Voor dames, heren, kinderen van alle leeftijden. Afspraken online en telefonisch.
 
-Ultra-Light custom php framework.
+### 🏠 [Homepage](https://admin.sluijterkappers.nl)
 
 ## Installation
 
 For development
 
-1. `composer create-project --prefer-dist cubequence/cubequence hello-world`
-2. Edit `.env`
-3. `php cubequence app:key`
-4. `php cubequence db:migrate`
-5. `php cubequence db:seed`
-6. Start development server `php -S localhost:8080 -t public`
+1. `git clone https://github.com/Luca-Castelnuovo/SluijterKappersBackend`
+2. `composer install`
+3. Edit `.env`
+4. `php cubequence app:key`
+5. `php cubequence db:migrate`
+6. `php cubequence db:seed`
+7. Start development server `php -S localhost:8080 -t public`
 
 For deployment
 
-1. `git clone https://github.com/CubeQuence/CubeQuence`
+1. `git clone https://github.com/Luca-Castelnuovo/SluijterKappersBackend`
 2. `composer install --optimize-autoloader --no-dev`
 3. Edit `.env`
 4. `php cubequence app:key`
 5. `php cubequence db:migrate`
 
-## Security Vulnerabilities
+## Author
 
-Please review [our security policy](https://github.com/CubeQuence/CubeQuence/security/policy) on how to report security vulnerabilities.
+👤 **Luca-Castelnuovo**
 
-## License
+-   Github: [@Luca-Castelnuovo](https://github.com/Luca-Castelnuovo)
 
-Copyright © 2020 [Luca Castelnuovo](https://github.com/Luca-Castelnuovo). <br />
-This project is [MIT](LICENSE.md) licensed.
+👤 **PepijnRezelman**
+
+-   Github: [@Luca-Castelnuovo](https://github.com/PepijnRezelman)
+
+## 📝 License
+
+Copyright © 2020 [Luca-Castelnuovo](https://github.com/Luca-Castelnuovo) and [PepijnRezelman](https://github.com/PepijnRezelman).<br />
+This project is [UNLICENSED](https://choosealicense.com/no-permission/).

@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use CQ\DB\DB;
 use CQ\Controllers\Controller;
 
 class UserController extends Controller
@@ -13,6 +14,20 @@ class UserController extends Controller
      */
     public function dashboard()
     {
-        return $this->respond('dashboard.twig');
+        $products = DB::select(
+            'products',
+            [
+                'id',
+                'image',
+                'name',
+                'description',
+                'price',
+            ],
+            []
+        );
+
+        return $this->respond('dashboard.twig', [
+            'products' => $products,
+        ]);
     }
 }

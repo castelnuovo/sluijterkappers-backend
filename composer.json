@@ -1,11 +1,11 @@
 {
-    "name": "cubequence/cubequence",
-    "description": "The CubeQuence Framework",
+    "name": "luca-castelnuovo/sluijterkappersbackend",
+    "description": "Je hebt kappers en kappers. SluijterKappers is al vele jaren een zeer eigentijdse kapper / kapsalon in Soest. Voor dames, heren, kinderen van alle leeftijden. Afspraken online en telefonisch.",
     "keywords": [
-        "framework",
+        "sluijter kappers",
         "cubequence"
     ],
-    "license": "MIT",
+    "license": "",
     "authors": [
         {
             "name": "Luca Castelnuovo",
@@ -37,7 +37,7 @@
         ]
     },
     "support": {
-        "issues": "https://github.com/CubeQuence/CubeQuence/issues",
-        "source": "https://github.com/CubeQuence/CubeQuence"
+        "issues": "https://github.com/Luca-Castelnuovo/SluijterKappersBackend/issues",
+        "source": "https://github.com/Luca-Castelnuovo/SluijterKappersBackend"
     }
 }

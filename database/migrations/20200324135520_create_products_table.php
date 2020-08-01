@@ -2,7 +2,7 @@
 
 use CQ\DB\Migration;
 
-class CreateExampleTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Change Method.
@@ -31,9 +31,12 @@ class CreateExampleTable extends Migration
      */
     public function change()
     {
-        $example = $this->table('example', ['id' => false, 'primary_key' => 'id']);
-        $example->addColumn('id', 'uuid')
-            ->addColumn('string', 'string', ['limit' => 2048, 'null' => false])
+        $products = $this->table('products', ['id' => false, 'primary_key' => 'id']);
+        $products->addColumn('id', 'uuid')
+            ->addColumn('image', 'string', ['limit' => 2048, 'null' => true])
+            ->addColumn('name', 'string', ['limit' => 128, 'null' => false])
+            ->addColumn('description', 'text', ['null' => true])
+            ->addColumn('price', 'float', ['null' => true]) // TODO: check 2 decimalen
             ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->create()

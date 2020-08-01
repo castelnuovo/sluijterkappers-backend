@@ -2,34 +2,14 @@
 
 namespace App\Controllers;
 
-use App\Validators\ExampleValidator;
+use App\Validators\ProductsValidator;
 use CQ\Controllers\Controller;
 use CQ\DB\DB;
 use CQ\Helpers\UUID;
 use Exception;
 
-class ExampleController extends Controller
+class ProductsController extends Controller
 {
-    /**
-     * List entries.
-     *
-     * @return Json
-     */
-    public function index()
-    {
-        $example = DB::select('example', [
-            'id',
-            'string',
-            'updated_at',
-            'created_at',
-        ], []);
-
-        return $this->respondJson(
-            'Example Entries',
-            $example
-        );
-    }
-
     /**
      * Create entry.
      *
@@ -40,10 +20,10 @@ class ExampleController extends Controller
     public function create($request)
     {
         try {
-            ExampleValidator::create($request->data);
+            ProductsValidator::create($request->data);
         } catch (Exception $e) {
             return $this->respondJson(
-                'Provided data was malformed',
+                'De data was incorrect',
                 json_decode($e->getMessage()),
                 422
             );
@@ -51,13 +31,16 @@ class ExampleController extends Controller
 
         $data = [
             'id' => UUID::v6(),
-            'string' => $request->data->string,
+            'image' => $request->data->image,
+            'name' => $request->data->name,
+            'description' => $request->data->description,
+            'price' => $request->data->price,
         ];
 
-        DB::create('example', $data);
+        DB::create('products', $data);
 
         return $this->respondJson(
-            'Example Created',
+            'Product Aangemaakt',
             $data
         );
     }
@@ -73,31 +56,34 @@ class ExampleController extends Controller
     public function update($request, $id)
     {
         try {
-            ExampleValidator::update($request->data);
+            ProductsValidator::update($request->data);
         } catch (Exception $e) {
             return $this->respondJson(
-                'Provided data was malformed',
+                'De data was incorrect',
                 json_decode($e->getMessage()),
                 422
             );
         }
 
-        $example = DB::get('example', ['string'], ['id' => $id]);
+        $product = DB::get('products', ['string'], ['id' => $id]);
 
-        if (!$example) {
+        if (!$product) {
             return $this->respondJson(
-                'Example not found',
+                'Product niet gevonden',
                 [],
                 404
             );
         }
 
         $data = [
-            'string' => $request->data->string ?: $example['string'],
+            'image' => $request->data->image ?: $product['image'],
+            'name' => $request->data->name ?: $product['name'],
+            'description' => $request->data->description ?: $product['description'],
+            'price' => $request->data->price ?: $product['price'],
         ];
 
         DB::update(
-            'example',
+            'products',
             $data,
             [
                 'id' => $id,
@@ -105,7 +91,7 @@ class ExampleController extends Controller
         );
 
         return $this->respondJson(
-            'Example Updated',
+            'Product Updated',
             $data
         );
     }
@@ -119,8 +105,8 @@ class ExampleController extends Controller
      */
     public function delete($id)
     {
-        DB::delete('example', ['id' => $id]);
+        DB::delete('products', ['id' => $id]);
 
-        return $this->respondJson('Example Deleted');
+        return $this->respondJson('Product Verwijderd');
     }
 }

@@ -3,6 +3,6 @@
 {% set page_script = "/assets/js/dashboard.js" %}
 
 {% block content %}
-<h3>CubeQuence Dashboard!</h3>
-<img src="/assets/img/logo.png" alt="Logo">
+<h3>Sluijterkappers Producten!</h3>
+<pre>{{ products|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
 {% endblock %}

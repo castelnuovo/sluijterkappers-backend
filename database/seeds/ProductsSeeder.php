@@ -2,7 +2,7 @@
 
 use CQ\DB\Seeder;
 
-class ExampleSeeder extends Seeder
+class ProductsSeeder extends Seeder
 {
     /**
      * Run Method.
@@ -20,12 +20,15 @@ class ExampleSeeder extends Seeder
         for ($i = 0; $i < 5; ++$i) {
             $data[] = [
                 'id' => $faker->uuid,
-                'string' => $faker->sentence,
+                'image' => $faker->imageUrl,
+                'name' => $faker->name,
+                'description' => $faker->text,
+                'price' => $faker->randomFloat(2, 1, 100),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_at' => date('Y-m-d H:i:s'),
             ];
         }
 
-        $this->table('example')->insert($data)->saveData();
+        $this->table('products')->insert($data)->saveData();
     }
 }

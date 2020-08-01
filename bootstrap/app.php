@@ -15,10 +15,7 @@ $config->attach('analytics');
 $config->attach('app');
 $config->attach('apps'); // apps.lucacastelnuovo.nl
 $config->attach('cache');
-$config->attach('cors');
 $config->attach('database');
-$config->attach('ratelimit');
-$config->attach('variants');
 
 // Debug Helper
 if (App::debug()) {
