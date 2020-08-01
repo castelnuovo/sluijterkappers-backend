@@ -22,6 +22,7 @@ Middleware::create(['middleware' => [Session::class]], function () {
 });
 
 Middleware::create(['prefix' => '/products'], function () {
+    Route::get('', 'ProductsController@index');
     Route::post('', 'ProductsController@create', JSON::class);
     Route::patch('/{id}', 'ProductsController@update', JSON::class);
     Route::delete('/{id}', 'ProductsController@delete');

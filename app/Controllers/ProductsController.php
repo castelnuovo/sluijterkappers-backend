@@ -11,7 +11,28 @@ use Exception;
 class ProductsController extends Controller
 {
     /**
-     * Create entry.
+     * List producten.
+     *
+     * @return Json
+     */
+    public function index()
+    {
+        $producten = DB::select('producten', [
+            'id',
+            'image',
+            'name',
+            'description',
+            'price',
+        ], []);
+
+        return $this->respondJson(
+            '',
+            $producten
+        );
+    }
+
+    /**
+     * Create producten.
      *
      * @param object $request
      *
@@ -46,7 +67,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * Update entry.
+     * Update producten.
      *
      * @param object $request
      * @param string $id
@@ -97,7 +118,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * Delete entry.
+     * Delete producten.
      *
      * @param string $id
      *
