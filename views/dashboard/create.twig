@@ -1,0 +1,51 @@
+<div class="col s12 m12 l6">
+    <div class="card hoverable">
+        <div class="card-content">
+            <span class="card-title">Nieuw Product</span>
+        </div>
+        <div class="card-action">
+            <div class="row">
+                <div class="col s12">
+                    <button class="btn modal-trigger blue accent-4 waves-effect waves-light" style="width: 100%" data-target="template-create">
+                        Create
+                    </button>
+                    <form id="template-create" class="modal modal-fixed-footer template-create">
+                        <div class="modal-content">
+                            <h4>Create Template</h4>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="name" name="name" type="text" class="validate character-counter" data-length="64" required>
+                                    <label for="name">Template Name*</label>
+                                    <span class="helper-text" data-error="Field is required"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12 m6">
+                                    <input id="email_to" name="email_to" type="text" class="validate character-counter" data-length="256" required>
+                                    <label for="email_to">Email To*</label>
+                                    <span class="helper-text" data-error="Field is required">The adres where the form submission is recieved</span>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <input id="email_subject" name="email_subject" type="text" class="validate character-counter" data-length="256" required>
+                                    <label for="email_subject">Email Subject*</label>
+                                    <span class="helper-text" data-error="Field is required"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="email_content" name="email_content" class="materialize-textarea validate character-counter" data-length="15000" required></textarea>
+                                    <label for="email_content">Email template*</label>
+                                    <span class="helper-text" data-error="Field is required">Template can include "{{"{{varName}}"}}" to be dynamicly added</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn blue accent-4 waves-effect waves-light" type="submit">Create</button>
+                            <button class="btn blue accent-4 waves-effect waves-light modal-close" type="button">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

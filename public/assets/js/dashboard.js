@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // M.Modal.init(document.querySelectorAll('.modal'), { dismissible: false });
+    M.Modal.init(document.querySelectorAll('.modal'), { dismissible: false });
     M.Sidenav.init(document.querySelectorAll('.sidenav'), { edge: "right" });
     // M.CharacterCounter.init(document.querySelectorAll('.character-counter'));
 });
