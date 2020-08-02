@@ -17,13 +17,53 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = DB::select('products', [
+        $kerastase = DB::select('products', [
             'id',
             'image',
             'name',
             'description',
             'price [Number]',
-        ], []);
+        ], ['category' => 'kerastase']);
+
+        $loreal = DB::select('products', [
+            'id',
+            'image',
+            'name',
+            'description',
+            'price [Number]',
+        ], ['category' => 'loreal']);
+
+        $tecni_art = DB::select('products', [
+            'id',
+            'image',
+            'name',
+            'description',
+            'price [Number]',
+        ], ['category' => 'tecni_art']);
+
+        $marc_inbane = DB::select('products', [
+            'id',
+            'image',
+            'name',
+            'description',
+            'price [Number]',
+        ], ['category' => 'marc_inbane']);
+
+        $overig = DB::select('products', [
+            'id',
+            'image',
+            'name',
+            'description',
+            'price [Number]',
+        ], ['category' => 'overig']);
+
+        $products = [
+            "kerastase" => $kerastase,
+            "loreal" => $loreal,
+            "tecni_art" => $tecni_art,
+            "marc_inbane" => $marc_inbane,
+            "overig" => $overig,
+        ];
 
         return $this->respondJson(
             '',
@@ -56,14 +96,14 @@ class ProductsController extends Controller
             'name' => $request->data->name,
             'description' => $request->data->description,
             'price' => $request->data->price,
+            'category' => $request->data->category,
         ];
 
         DB::create('products', $data);
 
-        return $this->respondJson(
-            'Product Aangemaakt',
-            $data
-        );
+        return $this->respondJson('Product Aangemaakt', [
+            'reload' => true,
+        ]);
     }
 
     /**
@@ -91,6 +131,7 @@ class ProductsController extends Controller
             'name',
             'description',
             'price',
+            'category',
         ], ['id' => $id]);
 
         if (!$product) {
@@ -116,10 +157,9 @@ class ProductsController extends Controller
             ]
         );
 
-        return $this->respondJson(
-            'Product Updated',
-            $data
-        );
+        return $this->respondJson('Product Updated', [
+            'reload' => true,
+        ]);
     }
 
     /**
@@ -133,6 +173,8 @@ class ProductsController extends Controller
     {
         DB::delete('products', ['id' => $id]);
 
-        return $this->respondJson('Product Verwijderd');
+        return $this->respondJson('Product Verwijderd', [
+            'reload' => true,
+        ]);
     }
 }

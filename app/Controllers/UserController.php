@@ -14,17 +14,53 @@ class UserController extends Controller
      */
     public function dashboard()
     {
-        $products = DB::select(
-            'products',
-            [
-                'id',
-                'image',
-                'name',
-                'description',
-                'price',
-            ],
-            []
-        );
+        $kerastase = DB::select('products', [
+            'id',
+            'image',
+            'name',
+            'description',
+            'price [Number]',
+        ], ['category' => 'kerastase']);
+
+        $loreal = DB::select('products', [
+            'id',
+            'image',
+            'name',
+            'description',
+            'price [Number]',
+        ], ['category' => 'loreal']);
+
+        $tecni_art = DB::select('products', [
+            'id',
+            'image',
+            'name',
+            'description',
+            'price [Number]',
+        ], ['category' => 'tecni_art']);
+
+        $marc_inbane = DB::select('products', [
+            'id',
+            'image',
+            'name',
+            'description',
+            'price [Number]',
+        ], ['category' => 'marc_inbane']);
+
+        $overig = DB::select('products', [
+            'id',
+            'image',
+            'name',
+            'description',
+            'price [Number]',
+        ], ['category' => 'overig']);
+
+        $products = [
+            "kerastase" => $kerastase,
+            "loreal" => $loreal,
+            "tecni_art" => $tecni_art,
+            "marc_inbane" => $marc_inbane,
+            "overig" => $overig,
+        ];
 
         return $this->respond('dashboard.twig', [
             'products' => $products,

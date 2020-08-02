@@ -17,7 +17,14 @@ class ProductsValidator extends Validator
         $v = v::attribute('image', v::url()->length(1, 2048))
         ->attribute('name', v::stringType()->length(1, 128))
         ->attribute('description', v::stringType()->length(1, 2048))
-        ->attribute('price', v::numericVal());
+        ->attribute('price', v::numericVal())
+        ->attribute('category', v::oneOf(
+            v::equals('kerastase'),
+            v::equals('loreal'),
+            v::equals('tecni_art'),
+            v::equals('marc_inbane'),
+            v::equals('overig')
+        ));
 
         self::validate($v, $data);
     }

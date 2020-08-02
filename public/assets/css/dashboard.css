@@ -1,3 +1,7 @@
 .modal {
     max-width: unset;
 }
+
+.mr-2 {
+    margin-right: 0.5rem !important;
+}

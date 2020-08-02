@@ -24,6 +24,7 @@ class ProductsSeeder extends Seeder
                 'name' => $faker->name,
                 'description' => $faker->text,
                 'price' => $faker->randomFloat(2, 1, 100),
+                'category' => 'marc_inbane',
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_at' => date('Y-m-d H:i:s'),
             ];

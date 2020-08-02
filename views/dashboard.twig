@@ -6,8 +6,39 @@
 {% block content %}
     <div class="row">
         {% include 'dashboard/create.twig' %}
+    </div>
 
-        {% for product in products %}
+    <div class="row">
+        <h2>Kérastase</h2>
+        {% for product in products.kerastase %}
+            {% include 'dashboard/view.twig' %}
+        {% endfor %}
+    </div>
+
+    <div class="row">
+        <h2>L'Oréal</h2>
+        {% for product in products.loreal %}
+            {% include 'dashboard/view.twig' %}
+        {% endfor %}
+    </div>
+
+    <div class="row">
+        <h2>Tecni Art</h2>
+        {% for product in products.tecni_art %}
+            {% include 'dashboard/view.twig' %}
+        {% endfor %}
+    </div>
+
+    <div class="row">
+        <h2>Marc Inbane</h2>
+        {% for product in products.marc_inbane %}
+            {% include 'dashboard/view.twig' %}
+        {% endfor %}
+    </div>
+
+    <div class="row">
+        <h2>Overig</h2>
+        {% for product in products.overig %}
             {% include 'dashboard/view.twig' %}
         {% endfor %}
     </div>

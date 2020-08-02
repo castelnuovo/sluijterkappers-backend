@@ -1,0 +1,35 @@
+<form id="product-{{ product.id }}-edit" class="modal product-edit" data-id="{{ product.id }}">
+    <div class="modal-content">
+        <h4>Edit product</h4>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="image" name="image" type="url" class="validate character-counter" data-length="2048" required value="{{ product.image }}">
+                <label for="image">Foto URL*</label>
+                <span class="helper-text" data-error="URL is vereist"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <input id="name" name="name" type="text" class="validate character-counter" data-length="128" required value="{{ product.name }}">
+                <label for="name">Naam*</label>
+                <span class="helper-text" data-error="Naam is vereist"></span>
+            </div>
+            <div class="input-field col s12 m6">
+                <input id="price" name="price" type="number" class="validate character-counter" data-length="256" required step="any" value="{{ product.price }}">
+                <label for="price">Prijs*</label>
+                <span class="helper-text" data-error="Prijs is vereist"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="description" name="description" class="materialize-textarea validate character-counter" data-length="2048" required>{{ product.description }}</textarea>
+                <label for="description">Beschrijving*</label>
+                <span class="helper-text" data-error="Beschrijving is vereist"></span>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn blue accent-4 waves-effect waves-light mr-2">Update</button>
+        <button class="btn blue accent-4 waves-effect waves-light modal-close" type="button">Annuleer</button>
+    </div>
+</form>

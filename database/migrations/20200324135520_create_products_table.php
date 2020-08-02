@@ -33,10 +33,11 @@ class CreateProductsTable extends Migration
     {
         $products = $this->table('products', ['id' => false, 'primary_key' => 'id']);
         $products->addColumn('id', 'uuid')
-            ->addColumn('image', 'string', ['limit' => 2048, 'null' => true])
+            ->addColumn('image', 'string', ['limit' => 2048, 'null' => false])
             ->addColumn('name', 'string', ['limit' => 128, 'null' => false])
-            ->addColumn('description', 'text', ['null' => true])
-            ->addColumn('price', 'float', ['null' => true]) // TODO: check 2 decimalen
+            ->addColumn('description', 'text', ['null' => false])
+            ->addColumn('price', 'float', ['null' => false])
+            ->addColumn('category', 'string', ['limit' => 32, 'null' => false])
             ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->create()
