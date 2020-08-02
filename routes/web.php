@@ -21,7 +21,7 @@ Middleware::create(['middleware' => [Session::class]], function () {
     Route::get('/dashboard', 'UserController@dashboard');
 });
 
-Middleware::create(['prefix' => '/products'], function () {
+Middleware::create(['prefix' => '/products'], function () { // TODO: require auth
     Route::get('', 'ProductsController@index');
     Route::post('', 'ProductsController@create', JSON::class);
     Route::patch('/{id}', 'ProductsController@update', JSON::class);

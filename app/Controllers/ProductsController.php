@@ -17,17 +17,17 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $producten = DB::select('producten', [
+        $products = DB::select('products', [
             'id',
             'image',
             'name',
             'description',
-            'price',
+            'price [Number]',
         ], []);
 
         return $this->respondJson(
             '',
-            $producten
+            $products
         );
     }
 
@@ -86,7 +86,12 @@ class ProductsController extends Controller
             );
         }
 
-        $product = DB::get('products', ['string'], ['id' => $id]);
+        $product = DB::get('products', [
+            'image',
+            'name',
+            'description',
+            'price',
+        ], ['id' => $id]);
 
         if (!$product) {
             return $this->respondJson(
