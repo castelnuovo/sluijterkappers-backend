@@ -35,7 +35,6 @@ class CreateProductsTable extends Migration
         $products->addColumn('id', 'uuid')
             ->addColumn('image', 'string', ['limit' => 2048, 'null' => false])
             ->addColumn('name', 'string', ['limit' => 128, 'null' => false])
-            ->addColumn('description', 'text', ['null' => false])
             ->addColumn('price', 'float', ['null' => false])
             ->addColumn('category', 'string', ['limit' => 32, 'null' => false])
             ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])

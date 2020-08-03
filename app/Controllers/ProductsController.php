@@ -21,7 +21,6 @@ class ProductsController extends Controller
             'id',
             'image',
             'name',
-            'description',
             'price [Number]',
         ], ['category' => 'kerastase']);
 
@@ -29,7 +28,6 @@ class ProductsController extends Controller
             'id',
             'image',
             'name',
-            'description',
             'price [Number]',
         ], ['category' => 'loreal']);
 
@@ -37,7 +35,6 @@ class ProductsController extends Controller
             'id',
             'image',
             'name',
-            'description',
             'price [Number]',
         ], ['category' => 'tecni_art']);
 
@@ -45,7 +42,6 @@ class ProductsController extends Controller
             'id',
             'image',
             'name',
-            'description',
             'price [Number]',
         ], ['category' => 'marc_inbane']);
 
@@ -53,7 +49,6 @@ class ProductsController extends Controller
             'id',
             'image',
             'name',
-            'description',
             'price [Number]',
         ], ['category' => 'overig']);
 
@@ -94,7 +89,6 @@ class ProductsController extends Controller
             'id' => UUID::v6(),
             'image' => $request->data->image,
             'name' => $request->data->name,
-            'description' => $request->data->description,
             'price' => $request->data->price,
             'category' => $request->data->category,
         ];
@@ -129,7 +123,6 @@ class ProductsController extends Controller
         $product = DB::get('products', [
             'image',
             'name',
-            'description',
             'price',
             'category',
         ], ['id' => $id]);
@@ -145,7 +138,6 @@ class ProductsController extends Controller
         $data = [
             'image' => $request->data->image ?: $product['image'],
             'name' => $request->data->name ?: $product['name'],
-            'description' => $request->data->description ?: $product['description'],
             'price' => $request->data->price ?: $product['price'],
         ];
 

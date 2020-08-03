@@ -18,7 +18,6 @@ class UserController extends Controller
             'id',
             'image',
             'name',
-            'description',
             'price [Number]',
         ], ['category' => 'kerastase']);
 
@@ -26,7 +25,6 @@ class UserController extends Controller
             'id',
             'image',
             'name',
-            'description',
             'price [Number]',
         ], ['category' => 'loreal']);
 
@@ -34,7 +32,6 @@ class UserController extends Controller
             'id',
             'image',
             'name',
-            'description',
             'price [Number]',
         ], ['category' => 'tecni_art']);
 
@@ -42,7 +39,6 @@ class UserController extends Controller
             'id',
             'image',
             'name',
-            'description',
             'price [Number]',
         ], ['category' => 'marc_inbane']);
 
@@ -50,7 +46,6 @@ class UserController extends Controller
             'id',
             'image',
             'name',
-            'description',
             'price [Number]',
         ], ['category' => 'overig']);
 
