@@ -13,7 +13,7 @@ session_start();
 $config = new Config(__DIR__);
 $config->attach('analytics');
 $config->attach('app');
-$config->attach('apps'); // apps.lucacastelnuovo.nl
+$config->attach('auth'); // auth.castelnuovo.xyz
 $config->attach('cache');
 $config->attach('database');
 
