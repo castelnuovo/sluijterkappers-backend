@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 timeout: 7000,
                 onload: (response) => {
                     response = JSON.parse(response);
-                    document.querySelector('input[name="file_url"]').value = `https://assets.castelnuovo.xyz/${response.filename}`;
+                    document.querySelector('input[name="image"]').value = `https://assets.castelnuovo.xyz/${response.filename}`;
                 },
             },
             revert: null,
