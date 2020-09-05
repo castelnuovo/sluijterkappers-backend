@@ -43,6 +43,13 @@ class UserController extends Controller
             'price [Number]',
         ], ['category' => 'marc_inbane']);
 
+        $double_true = DB::select('products', [
+            'id',
+            'image',
+            'name',
+            'price [Number]',
+        ], ['category' => 'double_true']);
+
         $overig = DB::select('products', [
             'id',
             'image',
@@ -55,6 +62,7 @@ class UserController extends Controller
             "loreal" => $loreal,
             "tecni_art" => $tecni_art,
             "marc_inbane" => $marc_inbane,
+            "double_true" => $double_true,
             "overig" => $overig,
         ];
 

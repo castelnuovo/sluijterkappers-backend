@@ -37,6 +37,13 @@
     </div>
 
     <div class="row">
+        <h2>Double True</h2>
+        {% for product in products.double_true %}
+            {% include 'dashboard/view.twig' %}
+        {% endfor %}
+    </div>
+
+    <div class="row">
         <h2>Overig</h2>
         {% for product in products.overig %}
             {% include 'dashboard/view.twig' %}

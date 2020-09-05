@@ -22,6 +22,7 @@ class ProductsValidator extends Validator
             v::equals('loreal'),
             v::equals('tecni_art'),
             v::equals('marc_inbane'),
+            v::equals('double_true'),
             v::equals('overig')
         ));
 
