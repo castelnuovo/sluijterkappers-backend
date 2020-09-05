@@ -9,14 +9,22 @@ document.addEventListener('DOMContentLoaded', function () {
     /**
      * File Uploader
      */
-    // FilePond.registerPlugin(FilePondPluginImagePreview);
+    FilePond.registerPlugin(FilePondPluginFileValidateSize);
+    FilePond.registerPlugin(FilePondPluginFileValidateType);
+    FilePond.registerPlugin(FilePondPluginImageCrop);
+    FilePond.registerPlugin(FilePondPluginImagePreview);
+    FilePond.registerPlugin(FilePondPluginImageTransform);
     FilePond.create(document.querySelector('input[type="file"]'));
+
     FilePond.setOptions({
+        maxFileSize: '5MB',
+        acceptedFileTypes: ['image/png', 'image/jpeg'],
+        // imageCropAspectRatio: '1:1',
         server: {
             url: 'https://assets.castelnuovo.xyz',
             process: {
                 headers: {
-                    'Authorization': '1234' // TODO: get from window._asset_key
+                    'Authorization': window._assets_key
                 },
                 timeout: 7000,
                 onload: (response) => {

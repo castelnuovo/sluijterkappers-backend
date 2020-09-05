@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use CQ\DB\DB;
+use CQ\Config\Config;
 use CQ\Controllers\Controller;
 
 class UserController extends Controller
@@ -59,6 +60,7 @@ class UserController extends Controller
 
         return $this->respond('dashboard.twig', [
             'products' => $products,
+            'assets_key' => Config::get('assets.key'),
         ]);
     }
 }
