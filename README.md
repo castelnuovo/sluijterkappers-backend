@@ -38,7 +38,7 @@ For deployment
 
 👤 **PepijnRezelman**
 
--   Github: [@Luca-Castelnuovo](https://github.com/PepijnRezelman)
+-   Github: [@PepijnRezelman](https://github.com/PepijnRezelman)
 
 ## 📝 License
 
