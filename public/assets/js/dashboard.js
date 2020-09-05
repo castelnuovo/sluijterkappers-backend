@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     FilePond.setOptions({
         maxFileSize: '5MB',
-        acceptedFileTypes: ['image/png', 'image/jpeg'],
+        acceptedFileTypes: ['image/*'],
         // imageCropAspectRatio: '1:1',
         server: {
             url: 'https://assets.castelnuovo.xyz',
