@@ -5,13 +5,14 @@
 <form id="product-create" class="modal product-create">
     <div class="modal-content">
         <h4>Creëer product</h4>
+
+        <br />
+
         <div class="row">
-            <div class="input-field col s12">
-                <input id="image" name="image" type="url" class="validate character-counter" data-length="2048" required>
-                <label for="image">Foto URL*</label>
-                <span class="helper-text" data-error="URL is vereist"></span>
-            </div>
+            <h6>Afbeelding</h6>
+            <input type="file" name="file" required>
         </div>
+
         <div class="row">
             <div class="input-field col s12 m6">
                 <input id="name" name="name" type="text" class="validate character-counter" data-length="128" required>
@@ -29,13 +30,14 @@
                 <option value="" disabled selected>Kies categorie</option>
                 <option value="kerastase">Kérastase</option>
                 <option value="loreal">L'Oréal</option>
-                <option value="recni_art">Tecni Art</option>
+                <option value="tecni_art">Tecni Art</option>
                 <option value="marc_inbane">Marc Inbane</option>
                 <option value="overig">Overig</option>
             </select>
         </div>
     </div>
     <div class="modal-footer">
+        <input name="file_url" type="hidden" required>
         <button class="btn blue accent-4 waves-effect waves-light mr-2" type="submit">Creëer</button>
         <button class="btn blue accent-4 waves-effect waves-light modal-close" type="button">Annuleer</button>
     </div>

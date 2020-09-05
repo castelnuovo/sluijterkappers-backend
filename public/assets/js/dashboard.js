@@ -7,6 +7,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     /**
+     * File Uploader
+     */
+    // FilePond.registerPlugin(FilePondPluginImagePreview);
+    FilePond.create(document.querySelector('input[type="file"]'));
+    FilePond.setOptions({
+        server: {
+            url: 'https://assets.castelnuovo.xyz',
+            process: {
+                headers: {
+                    'Authorization': '1234' // TODO: get from window._asset_key
+                },
+                timeout: 7000,
+                onload: (response) => {
+                    response = JSON.parse(response);
+                    document.querySelector('input[name="file_url"]').value = `https://assets.castelnuovo.xyz/${response.filename}`;
+                },
+            },
+            revert: null,
+            restore: null,
+            fetch: null
+        }
+    });
+
+    /**
      * Create
      */
     const createForm = document.querySelector('form.product-create');
