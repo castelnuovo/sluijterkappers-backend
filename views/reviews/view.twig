@@ -1,0 +1,11 @@
+<tr>
+    <td>{{ review.description }}</td>
+    <td>{{ review.name }}</td>
+    <td>{{ review.score }}</td>
+    <td>
+        <button class="btn modal-trigger blue accent-4 waves-effect waves-light" style="width: 100%" data-target="review-{{ review.id }}-edit">
+            Edit
+        </button>
+        <button class="btn modal-trigger blue accent-4 waves-effect waves-light" style="width: 100%" data-target="review-{{ review.id }}-delete">Delete</button>
+    </td>
+</tr>

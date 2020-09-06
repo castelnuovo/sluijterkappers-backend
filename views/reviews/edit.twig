@@ -1,0 +1,31 @@
+<form id="review-{{ review.id }}-edit" class="modal review-edit" data-id="{{ review.id }}">
+    <div class="modal-content">
+        <h4>Edit review</h4>
+
+        <br />
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="name" name="name" type="text" class="validate character-counter" data-length="32" required value="{{ review.name }}">
+                <label for="name">Naam*</label>
+                <span class="helper-text" data-error="Naam is vereist"></span>
+            </div>
+            <div class="input-field col s12">
+                <input id="description" name="description" type="text" class="validate character-counter" data-length="2048" required value="{{ review.description }}">
+                <label for="description">Beschrijving*</label>
+                <span class="helper-text" data-error="Beschrijving is vereist"></span>
+            </div>
+            <div class="input-field col s12">
+                <br />
+                <p class="range-field">
+                    <input id="score" name="score" type="range" min="0" max="5" required value="{{ review.score }}" />
+                </p>
+                <label for="score">Aantal Sterren*</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn blue accent-4 waves-effect waves-light mr-2">Update</button>
+        <button class="btn blue accent-4 waves-effect waves-light modal-close" type="button">Annuleer</button>
+    </div>
+</form>

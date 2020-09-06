@@ -17,13 +17,22 @@ Middleware::create(['prefix' => '/auth'], function () {
     Route::get('/logout', 'AuthController@logout');
 });
 
+Route::get('/products', 'ProductsController@index');
+Route::get('/reviews', 'ReviewsController@index');
+
 Middleware::create(['middleware' => [Session::class]], function () {
     Route::get('/dashboard', 'UserController@dashboard');
+    Route::get('/dashboard/reviews', 'UserController@reviews');
 });
 
-Middleware::create(['prefix' => '/products'], function () { // TODO: require auth
-    Route::get('', 'ProductsController@index');
+Middleware::create(['prefix' => '/products', 'middleware' => [Session::class]], function () {
     Route::post('', 'ProductsController@create', JSON::class);
     Route::put('/{id}', 'ProductsController@update', JSON::class);
     Route::delete('/{id}', 'ProductsController@delete');
+});
+
+Middleware::create(['prefix' => '/reviews', 'middleware' => [Session::class]], function () {
+    Route::post('', 'ReviewsController@create', JSON::class);
+    Route::put('/{id}', 'ReviewsController@update', JSON::class);
+    Route::delete('/{id}', 'ReviewsController@delete');
 });

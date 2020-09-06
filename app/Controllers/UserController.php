@@ -71,4 +71,23 @@ class UserController extends Controller
             'assets_key' => Config::get('assets.key'),
         ]);
     }
+
+    /**
+     * Reviews screen.
+     *
+     * @return Html
+     */
+    public function reviews()
+    {
+        $reviews = DB::select('reviews', [
+            'id',
+            'score',
+            'name',
+            'description',
+        ], []);
+
+        return $this->respond('reviews.twig', [
+            'reviews' => $reviews,
+        ]);
+    }
 }

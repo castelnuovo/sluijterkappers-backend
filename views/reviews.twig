@@ -1,0 +1,35 @@
+{% extends "partials/base.twig" %}
+{% set title = "Reviews" %}
+{% set page_script = "/assets/js/reviews.js" %}
+{% set page_css = "/assets/css/reviews.css" %}
+
+{% block content %}
+    <div class="row">
+        {% include 'reviews/create.twig' %}
+    </div>
+
+    <div class="row">
+        <h2>Reviews</h2>
+
+        <table class="striped responsive-table">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for review in reviews %}
+                    {% include 'reviews/view.twig' %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% for review in reviews %}
+            {% include 'reviews/modals.twig' %}
+        {% endfor %}
+    </div>
+{% endblock %}
