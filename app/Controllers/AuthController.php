@@ -12,6 +12,6 @@ class AuthController extends Auth
     {
         Session::destroy();
 
-        return $this->redirect('https://auth.castelnuovo.xyz/oauth2/authorize?client_id=' . Config::get('auth.id'));
+        return $this->redirect('https://auth.castelnuovo.xyz/oauth2/logout?client_id=' . Config::get('auth.id'));
     }
 }
