@@ -8,10 +8,4 @@ use CQ\Controllers\Auth;
 
 class AuthController extends Auth
 {
-    public function logout($msg = 'logout')
-    {
-        Session::destroy();
-
-        return $this->redirect('https://auth.castelnuovo.xyz/oauth2/logout?client_id=' . Config::get('auth.id'));
-    }
 }
