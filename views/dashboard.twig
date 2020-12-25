@@ -50,5 +50,8 @@
         {% endfor %}
     </div>
 
-    <script>window._assets_key = '{{ assets_key }}'</script>
+    <script>
+        window._api_key = '{{ api_key }}';
+        window._api_path = '{{ api_path }}';
+    </script>
 {% endblock %}

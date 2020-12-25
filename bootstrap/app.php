@@ -12,8 +12,8 @@ session_start();
 // Config
 $config = new Config(__DIR__);
 $config->attach('analytics');
+$config->attach('api');
 $config->attach('app');
-$config->attach('assets');
 $config->attach('auth'); // auth.castelnuovo.xyz
 $config->attach('cache');
 $config->attach('database');

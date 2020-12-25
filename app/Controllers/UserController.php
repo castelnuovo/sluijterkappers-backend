@@ -68,7 +68,8 @@ class UserController extends Controller
 
         return $this->respond('dashboard.twig', [
             'products' => $products,
-            'assets_key' => Config::get('assets.key'),
+            'api_key' => Config::get('api.key'),
+            'api_path' => Config::get('api.path'),
         ]);
     }
 

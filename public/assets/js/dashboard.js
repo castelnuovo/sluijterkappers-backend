@@ -21,15 +21,15 @@ document.addEventListener('DOMContentLoaded', function () {
         acceptedFileTypes: ['image/*'],
         // imageCropAspectRatio: '1:1',
         server: {
-            url: 'https://api.castelnuovo.xyz/imgpush',
+            url: window._api_path,
             process: {
                 headers: {
-                    'X-Api-Key': window._assets_key
+                    'X-Api-Key': window._api_key
                 },
                 timeout: 7000,
                 onload: (response) => {
                     response = JSON.parse(response);
-                    document.querySelector('input[name="image"]').value = `https://api.castelnuovo.xyz/imgpush/${response.filename}`;
+                    document.querySelector('input[name="image"]').value = `${window._api_path}/${response.filename}`;
                 },
             },
             revert: null,
