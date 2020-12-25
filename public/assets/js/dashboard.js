@@ -21,15 +21,15 @@ document.addEventListener('DOMContentLoaded', function () {
         acceptedFileTypes: ['image/*'],
         // imageCropAspectRatio: '1:1',
         server: {
-            url: 'https://assets.castelnuovo.xyz/upload',
+            url: 'https://api.castelnuovo.xyz/imgpush',
             process: {
                 headers: {
-                    'Authorization': window._assets_key
+                    'X-Api-Key': window._assets_key
                 },
                 timeout: 7000,
                 onload: (response) => {
                     response = JSON.parse(response);
-                    document.querySelector('input[name="image"]').value = `https://assets.castelnuovo.xyz/${response.filename}`;
+                    document.querySelector('input[name="image"]').value = `https://api.castelnuovo.xyz/imgpush/${response.filename}`;
                 },
             },
             revert: null,
