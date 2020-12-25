@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         acceptedFileTypes: ['image/*'],
         // imageCropAspectRatio: '1:1',
         server: {
-            url: 'https://assets.castelnuovo.xyz',
+            url: 'https://assets.castelnuovo.xyz/upload',
             process: {
                 headers: {
                     'Authorization': window._assets_key
