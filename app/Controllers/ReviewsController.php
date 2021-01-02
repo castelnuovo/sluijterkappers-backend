@@ -4,9 +4,8 @@ namespace App\Controllers;
 
 use App\Validators\ReviewsValidator;
 use CQ\Controllers\Controller;
-use CQ\DB\DB;
 use CQ\Helpers\UUID;
-use Exception;
+use CQ\DB\DB;
 
 class ReviewsController extends Controller
 {
@@ -41,10 +40,10 @@ class ReviewsController extends Controller
     {
         try {
             ReviewsValidator::create($request->data);
-        } catch (Exception $e) {
+        } catch (\Throwable $th) {
             return $this->respondJson(
                 'De data was incorrect',
-                json_decode($e->getMessage()),
+                json_decode($th->getMessage()),
                 422
             );
         }
@@ -75,10 +74,10 @@ class ReviewsController extends Controller
     {
         try {
             ReviewsValidator::update($request->data);
-        } catch (Exception $e) {
+        } catch (\Throwable $th) {
             return $this->respondJson(
                 'De data was incorrect',
-                json_decode($e->getMessage()),
+                json_decode($th->getMessage()),
                 422
             );
         }

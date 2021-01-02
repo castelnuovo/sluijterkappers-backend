@@ -4,9 +4,8 @@ namespace App\Controllers;
 
 use App\Validators\ProductsValidator;
 use CQ\Controllers\Controller;
-use CQ\DB\DB;
 use CQ\Helpers\UUID;
-use Exception;
+use CQ\DB\DB;
 
 class ProductsController extends Controller
 {
@@ -85,10 +84,10 @@ class ProductsController extends Controller
     {
         try {
             ProductsValidator::create($request->data);
-        } catch (Exception $e) {
+        } catch (\Throwable $th) {
             return $this->respondJson(
                 'De data was incorrect',
-                json_decode($e->getMessage()),
+                json_decode($th->getMessage()),
                 422
             );
         }
@@ -120,10 +119,10 @@ class ProductsController extends Controller
     {
         try {
             ProductsValidator::update($request->data);
-        } catch (Exception $e) {
+        } catch (\Throwable $th) {
             return $this->respondJson(
                 'De data was incorrect',
-                json_decode($e->getMessage()),
+                json_decode($th->getMessage()),
                 422
             );
         }
